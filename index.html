@@ -1,0 +1,182 @@
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+  <link rel="stylesheet" href="styles10.css"/>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Press Start 2P', cursive;
+      margin: 0;
+      padding: 0;
+    }
+    body{
+      display: flex;
+      justify-content: center;
+      align-items: center; 
+      background:linear-gradient(#ffe54f,#09ccf84c);
+      
+      z-index: -1;
+      
+    }
+    canvas{
+      border-radius: 5px;
+      z-index: 1000;
+      
+    }
+  </style>
+</head>
+<body>
+  <!-- red container div -->
+  <div style="
+  position:absolute;
+  top: 500px;
+  left: 10px;
+  font-size: 13px;
+  z-index: 1100;
+  color: rgb(255, 7, 7);
+  
+  ">
+    Sterowanie<br><br>
+    <span>A</span>-lewo<br><br>
+    <span>D</span>-Prawo<br><br>
+    <span>W</span>-Skok<br><br>
+    <span>Spacja</span>-Atak
+  </div>
+  <div style="position: relative; display: inline-block">
+    <!-- smaller red container div -->
+    <div
+      style="
+        position: absolute;
+        display: flex;
+        width: 100%;
+        align-items: center;
+        padding: 20px;
+      "
+    >
+      <!-- player health -->
+      <div
+        style="
+          position: relative;
+          width: 100%;
+          display: flex;
+          justify-content: flex-end;
+          border-top: 3px solid black;
+          border-left: 3px solid black;
+          border-bottom: 3px solid black;
+        "
+      >
+        <div style="background-color: red; height: 40px; width: 100%;" ></div>
+        <div
+          id="playerHealth"
+          style="
+            position: absolute;
+            background: #13fa23;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+          "
+        ></div>
+      </div>
+ 
+      <!-- timer -->
+      <div
+        id="timer"
+        style="
+
+          font-size: 26px;
+          background-color: rgb(251, 255, 0);
+          width: 100px;
+          height: 60px;
+          flex-shrink: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color:black;
+          border: 3px solid black;
+          border-radius: 5px;
+        "
+      >
+        10
+      </div>
+      <!-- enemy health -->
+      <div
+        style="
+          position: relative;
+          width: 100%;
+          border-top: 3px solid black;
+          border-bottom: 3px solid black;
+          border-right: 3px solid black;
+        "
+      >
+        <div style="background-color: red; height: 40px "></div>
+        <div
+          id="enemyHealth"
+          style="
+            position: absolute;
+            background: #13fa23;
+            width: 100%;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            
+          "
+        ></div>
+      </div>
+      <div></div>
+    </div>
+    <div
+      id="displayText"
+      style="
+        position: absolute;
+        color: rgb(255, 255, 255);
+        font-weight: bolder;
+        font-size: 30px;
+        letter-spacing: 3px;
+        align-items: center;
+        justify-content: center;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: none;
+      "
+    >
+   Remis
+
+      
+    </div>
+    <canvas></canvas>
+  </div>
+  <div style="
+
+  position:absolute;
+  top: 500px;
+  right: 0;
+  font-size: 13px;
+  z-index: 1100;
+  color: rgb(255, 7, 7);
+  ">
+    Sterowanie<br><br>
+    <i class="uil uil-arrow-circle-left"></i>-lewo<br><br>
+    <i class="uil uil-arrow-circle-right"></i>-Prawo<br><br>
+    <i class="uil uil-arrow-circle-up"></i>-Skok<br><br>
+    <i class="uil uil-arrow-circle-down"></i>-Atak
+  </div>
+
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"
+    integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <script src="js/utils.js"></script>
+  <script src="js/classes.js"></script>
+  <script src="index.js"></script>
+</body>
